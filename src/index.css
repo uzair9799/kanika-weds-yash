@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-cursive: "Great Vibes", cursive;
+
+  --color-cream: #FDFBF7;
+  --color-maroon: #800000;
+  --color-gold: #D4AF37;
+  --color-dark-ink: #2D2D2D;
+  --color-border-soft: rgba(128, 0, 0, 0.15);
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-dark-ink font-sans antialiased min-h-screen relative;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Geometric Balance Specific Styles */
+.geometric-border {
+  @apply border-[12px] border-maroon min-h-screen flex flex-col relative;
+}
+
+.geometric-corner {
+  @apply absolute w-[100px] h-[100px] border-2 border-gold z-10 pointer-events-none;
+}
+
+.geometric-corner-tl { @apply top-5 left-5 border-r-0 border-b-0; }
+.geometric-corner-br { @apply bottom-5 right-5 border-l-0 border-t-0; }
+
+.geometric-card {
+  @apply bg-white border border-border-soft p-5 relative shadow-sm;
+}
+
+.geometric-card-title {
+  @apply font-serif italic text-lg text-maroon mb-3 border-b border-gold inline-block;
+}
+
+.geometric-header {
+  @apply h-auto md:h-[160px] flex flex-col items-center justify-center border-b border-gold mx-4 md:mx-10 py-8;
+}
+
+.geometric-footer {
+  @apply h-auto md:h-[60px] border-t border-gold mx-4 md:mx-10 flex flex-col md:flex-row items-center justify-between py-4 text-[11px] text-gold uppercase tracking-wider;
+}
+
+.scratch-container {
+  @apply touch-none;
+}
+
+.curtain-panel {
+  @apply transition-transform duration-1500 ease-[cubic-bezier(0.7,0,0.3,1)];
+}
